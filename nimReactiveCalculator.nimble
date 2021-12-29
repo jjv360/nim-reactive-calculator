@@ -16,7 +16,8 @@ requires "nim >= 1.6.2"
 
 # For our examples only: Only import Reactive via git when running as a standalone project
 if not reactiveDevEnvironment: 
-    requires "https://github.com/jjv360/nim-reactive >= 0.1.2"
+    requires "https://github.com/jjv360/nim-reactive >= 0.1.3"
+    requires "https://github.com/jjv360/nim-reactive-web >= 0.1.3"
 
 # Reactive task
 task reactive, "Build the app":
@@ -25,6 +26,8 @@ task reactive, "Build the app":
     if reactiveDevEnvironment:
         echo "Installing Reactive from local source..."
         withDir thisDir() / ".." / "..":
+            exec "nimble install -y"
+        withDir thisDir() / ".." / ".." / "platforms" / "web":
             exec "nimble install -y"
 
     # Rest of the normal task

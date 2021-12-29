@@ -92,6 +92,6 @@ component MainWindow of Window:
 
 
 
-# Setup Reactive environment
-Reactive:
-    config "mainWindow", "main"
+# Start the app
+startReactiveApp:
+    plugin "web"
