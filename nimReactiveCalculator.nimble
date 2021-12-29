@@ -12,11 +12,11 @@ import os
 template reactiveDevEnvironment(): bool = fileExists(thisDir() / ".." / ".." / "reactive.nimble")
 
 # Dependencies
-
 requires "nim >= 1.6.2"
 
+# For our examples only: Only import Reactive via git when running as a standalone project
 if not reactiveDevEnvironment: 
-    requires"https://github.com/jjv360/nim-reactive >= 0.1.2"
+    requires "https://github.com/jjv360/nim-reactive >= 0.1.2"
 
 # Reactive task
 task reactive, "Build the app":
