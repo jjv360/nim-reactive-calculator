@@ -93,5 +93,4 @@ component MainWindow of Window:
 
 
 # Start the app
-startReactiveApp:
-    plugin "web"
+startReactiveApp()

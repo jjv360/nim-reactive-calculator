@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.4"
+version       = "0.1.5"
 author        = "jjv360"
 description   = "A simple calculator app made with Nim Reactive"
 license       = "MIT"
@@ -8,8 +8,8 @@ srcDir        = "src"
 
 # Dependencies
 requires "nim >= 1.6.2"
-requires "https://github.com/jjv360/nim-reactive >= 0.1.4"
-requires "https://github.com/jjv360/nim-reactive-web >= 0.1.4"
+requires "https://github.com/jjv360/nim-reactive >= 0.1.5"
+requires "https://github.com/jjv360/nim-reactive-web >= 0.1.5"
 
 # Reactive task
 import os, sequtils
