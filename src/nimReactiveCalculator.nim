@@ -41,15 +41,11 @@ component MainWindow of Window:
         Button(layout: AbsoluteLayout(x: "0%",  y: "80%", width: "20%", height: "20%"), title: "=", onClick: proc()=this.setNextOperation("="))
         Button(layout: AbsoluteLayout(x: "20%", y: "80%", width: "20%", height: "20%"), title: "0", onClick: proc()=this.addInput("0"))
         Button(layout: AbsoluteLayout(x: "40%", y: "80%", width: "20%", height: "20%"), title: ".", onClick: proc()=this.addInput("."))
-        Button(layout: AbsoluteLayout(x: "60%", y: "80%", width: "20%", height: "20%"), title: "+", onClick: proc()=this.setNextOperation("+"))
+        Button(layout= AbsoluteLayout(x: "60%", y: "80%", width: "20%", height: "20%"), title= "+", onClick= proc()=this.setNextOperation("+"))
         # Button(title="Clear", onClick=proc()=this.memory=0;this.input="";this.nextOperation="+";this.updateUi())
 
         # Output screen
-        Label(layout: AbsoluteLayout(x: "0%", y: "0%", width: "100%", height: "20%"), textColor: "green"):
-            if this.inputMode:
-                this.input
-            else:
-                $this.memory
+        Label(layout: AbsoluteLayout(x: "0%", y: "0%", width: "100%", height: "20%"), textColor: "green", text: if this.inputMode: this.input else: $this.memory)
 
 
     # Add a number input
@@ -93,4 +89,7 @@ component MainWindow of Window:
 
 
 # Start the app
-startReactiveApp()
+startReactiveApp:
+
+    echo "Calculator starting!"
+    # alert("Hello world! The calculator app is starting now.", title="App starting!", icon=information)
