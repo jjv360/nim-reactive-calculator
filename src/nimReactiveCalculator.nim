@@ -92,4 +92,4 @@ component MainWindow of Window:
 startReactiveApp:
 
     echo "Calculator starting!"
-    # alert("Hello world! The calculator app is starting now.", title="App starting!", icon=information)
+    alert("Hello world! The calculator app is starting now.", title="App starting!", icon=information)
